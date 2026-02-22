@@ -1,0 +1,15 @@
+<div class="h-dvh flex justify-center items-center">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="p-4 bg-[#282A36] shadow-2xl min-w-md" >
+        <div class="flex flex-col gap-4 w-full">
+            <p class="text-center tracking-widest text-4xl">Register</p>
+            <div>
+                <input type="email" formControlName="email" placeholder="Type here" class="input w-full" />
+                
+            </div>
+            <div>
+                <input type="password" formControlName="password" placeholder="Type here" class="input w-full" />
+            </div>
+            <button class="btn btn-neutral">Registrar</button>
+        </div>
+    </form>
+</div>
