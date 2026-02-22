@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Navbar } from "../../../../common/navbar/navbar";
+import { Footer } from "../../../../common/footer/footer";
+
+@Component({
+  selector: 'app-concert-layout',
+  imports: [RouterOutlet, Navbar, Footer],
+  templateUrl: './concert-layout.html',
+  styles: ``,
+})
+export class ConcertLayoutComponent {
+
+}
