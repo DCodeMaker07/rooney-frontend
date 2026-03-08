@@ -1,1 +1,48 @@
-<p>login-page works!</p>
+<div class="relative h-dvh w-full flex bg-[#0F172A] overflow-hidden">
+    
+    <div class="absolute inset-0 z-0">
+        <img 
+            src="assets/concert_login.webp" 
+            alt="Background" 
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#0F172A]/80 backdrop-blur-sm"></div>
+    </div>
+
+    <div class="relative z-10 flex items-center justify-center w-full p-8">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" 
+              class="p-8 bg-[#0F172A]/60 backdrop-blur-md shadow-2xl w-full max-w-md border border-white/20 rounded-2xl">
+            
+            <div class="flex flex-col gap-4 w-full">
+                <p class="text-center tracking-widest text-4xl text-white font-bold mb-2">Login</p>
+                
+                <div class="flex flex-col gap-1">
+                    <input 
+                        type="email" 
+                        formControlName="email" 
+                        placeholder="Email" 
+                        class="input w-full bg-[#1E293B]/50 border border-white/10 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-3" 
+                    />
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <input 
+                        type="password" 
+                        formControlName="password" 
+                        placeholder="Password" 
+                        class="input w-full bg-[#1E293B]/50 border border-white/10 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-3" 
+                    />
+                </div>
+
+                <button class="btn btn-neutral mt-4 bg-white text-[#0F172A] hover:bg-gray-200 font-bold py-3 rounded-lg transition-all active:scale-95">
+                    Iniciar sesión
+                </button>
+
+                <p class="text-center text-sm text-gray-400 mt-2">
+                    ¿No tienes cuenta? 
+                    <a routerLink="/register" class="text-white hover:underline font-semibold">Regístrate</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
