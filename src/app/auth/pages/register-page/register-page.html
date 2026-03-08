@@ -1,15 +1,35 @@
-<div class="h-dvh flex justify-center items-center">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="p-4 bg-[#282A36] shadow-2xl min-w-md" >
-        <div class="flex flex-col gap-4 w-full">
-            <p class="text-center tracking-widest text-4xl">Register</p>
-            <div>
-                <input type="email" formControlName="email" placeholder="Type here" class="input w-full" />
-                
+<div class="h-dvh w-full flex bg-[#282A36]">
+    <div class="grid grid-cols-1 md:grid-cols-2 w-full h-full">
+        
+        <div class="hidden md:block relative w-full h-full overflow-hidden">
+            <div class="absolute inset-0 bg-black/20 z-10"></div>
+            
+            <div *ngFor="let img of images; let i = index" 
+                 class="absolute inset-0 w-full h-full bg-cover bg-center opacity-0 animate-slideshow"
+                 [style.backgroundImage]="'url(' + img + ')'"
+                 [style.animationDelay]="(i * 5) + 's'">
             </div>
-            <div>
-                <input type="password" formControlName="password" placeholder="Type here" class="input w-full" />
-            </div>
-            <button class="btn btn-neutral">Registrar</button>
         </div>
-    </form>
+
+        <div class="flex items-center justify-center w-full p-8">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="p-4 bg-[#282A36] shadow-2xl w-full max-w-md">
+                <div class="flex flex-col gap-4 w-full">
+                    <p class="text-center tracking-widest text-4xl">Register</p>
+                    <input 
+                        type="email" 
+                        formControlName="email" 
+                        placeholder="Type here" 
+                        class="input w-full" 
+                    />
+                    <input 
+                        type="password" 
+                        formControlName="password" 
+                        placeholder="Type here" 
+                        class="input w-full" 
+                    />
+                    <button class="btn btn-neutral">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
